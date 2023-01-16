@@ -4,20 +4,15 @@ import { galleryItems } from './gallery-items.js';
 
 const divContainerEl = document.querySelector('.gallery');
 
-divContainerEl.style.display = 'flex';
-divContainerEl.style.flexWrap = 'wrap';
-divContainerEl.style.gap = '20px';
-
 const makeMarkup = function () {
   const markup = galleryItems.map(item => {
     return `
        <div class="gallery__item">
-         <a href="#" class="gallery__link">
-          <img 
+         <a href="${item.original}" class="gallery__link">
+          <img class = "gallery__image"
             src="${item.preview}"
             data-banner-url="${item.original}"
             alt="${item.description}"
-            loadng = "lazy"
           />
          </a>
        </div>
